@@ -60,7 +60,7 @@ def generate_launch_description():
     headless = LaunchConfiguration('headless')
     world = LaunchConfiguration('world')
     pose = {
-        'x': LaunchConfiguration('x_pose', default='-2.00'),
+        'x': LaunchConfiguration('x_pose', default='-4.00'),
         'y': LaunchConfiguration('y_pose', default='0.00'),
         'z': LaunchConfiguration('z_pose', default='0.01'),
         'R': LaunchConfiguration('roll', default='0.00'),
@@ -89,7 +89,7 @@ def generate_launch_description():
 
     declare_map_yaml_cmd = DeclareLaunchArgument(
         'map',
-        default_value=os.path.join(bringup_dir, 'maps', 'tb3_sandbox.yaml'),
+        default_value=os.path.join(bringup_dir, 'maps', 'tb3_hallway_precise2.yaml'),
     )
 
     declare_use_sim_time_cmd = DeclareLaunchArgument(
@@ -150,7 +150,7 @@ def generate_launch_description():
 
     declare_world_cmd = DeclareLaunchArgument(
         'world',
-        default_value=os.path.join(sim_dir, 'worlds', 'tb3_sandbox.sdf.xacro'),
+        default_value=os.path.join(sim_dir, 'worlds', 'tb3_hallway_precise.sdf.xacro'),
         description='Full path to world model file to load',
     )
 
